@@ -44,7 +44,7 @@ We're not just looking for any old solution that would solve the problem. We're 
 
 Basically treat the coding test as if it's part of a larger problem.
 
-Please try to limit your time on this project to less than 2 hours.
+Please try to limit your time on this project to 2-3 hours.
 If you don't have time to implement something please document it in the README and discuss what you would do with more time during the interview.
 
 Thank you!

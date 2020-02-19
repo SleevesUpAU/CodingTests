@@ -5,8 +5,8 @@ In this project a Web api which allows a user to keep track of pending and compl
 
 In the application, users can do the following:
 
-* get the list of unfinished tasks
-* get the list of completed tasks
+* Get the list of unfinished tasks
+* Get the list of completed tasks
 * Create tasks
 * Edit tasks
 * Complete tasks
@@ -17,8 +17,7 @@ In the application, users can do the following:
 * Tasks must not be more than 240 characters
 
 ## Technical Constraints
-* Springboot OR NodeJS (as directed)
-* Any storage (in memory, relational, nosql)
+* Springboot, NodeJS or .Net (as directed)
 
 ## Project Submission
 
@@ -30,17 +29,17 @@ Perferably, send us a link to a public repository including the above
 
 We're not just looking for any old solution that would solve the problem. We're looking for:
 
-* production quality code
-* good Object Oriented or functional practices
-* a solid testing approach
-* well thought out naming
-* solid error handling
-* extensibility/maintainability
-* good design
-* separation of concerns
-* sensible breakdown of code into files/modules
-* use of best practices
-* appropriate use of tools/frameworks
+* Production quality code
+* Good Object Oriented or functional practices
+* A solid testing approach
+* Well thought out naming
+* Solid error handling
+* Extensibility/maintainability
+* Good design
+* Separation of concerns
+* Sensible breakdown of code into files/modules
+* Use of best practices
+* Appropriate use of tools/frameworks
 
 Basically treat the coding test as if it's part of a larger problem.
 

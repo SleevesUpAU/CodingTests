@@ -1,4 +1,4 @@
-# Cool Challange
+# Cool Car App
 
 ## Context
 * You have been asked to develop a front end by Fast Exotic Cars Pty Ltd

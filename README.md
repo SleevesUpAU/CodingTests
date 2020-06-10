@@ -1,2 +1,2 @@
 # CodingTests
-Coding Tests for potential SleevesUp Engineers
+Coding Tests for potential SleevesUp/Sorted Engineers

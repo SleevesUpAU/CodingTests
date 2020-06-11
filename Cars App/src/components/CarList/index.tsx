@@ -4,13 +4,14 @@ import {FlatList} from 'react-native';
 import CarListItem from './CarListItem';
 
 type Props = {
-  items: Car[];
+  cars: Car[];
+  onRemove: (car: Car) => void;
 };
 
-const CarList: React.SFC<Props> = ({items}) => (
+const CarList: React.SFC<Props> = ({cars, onRemove}) => (
   <FlatList
-    data={items}
-    renderItem={({item}) => <CarListItem car={item} />}
+    data={cars}
+    renderItem={({item}) => <CarListItem car={item} onRemove={onRemove} />}
     keyExtractor={({id}) => id.toString()}
   />
 );

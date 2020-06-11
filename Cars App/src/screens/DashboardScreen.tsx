@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
@@ -23,15 +23,15 @@ const DashboardScreen = ({navigation}: Props) => {
     ),
   });
 
+  const [cars, setCars] = useState(mockData);
+
+  const removeCar = ({id: idToRemove}: Car) => {
+    setCars(cars.filter((car) => car.id !== idToRemove));
+  };
+
   return (
     <Screen>
-      <CarList items={mockData} />
-      <Button
-        title="Dashboard Button"
-        onPress={() => {
-          navigation.navigate('CarDetails');
-        }}
-      />
+      <CarList cars={cars} onRemove={removeCar} />
     </Screen>
   );
 };

@@ -28,10 +28,16 @@ interface Props extends TouchableOpacityProps {
   text: string;
 }
 
-const Button: React.SFC<Props> = ({style, text, ...props}) => (
-  <TouchableOpacity {...props} style={[styles.container, style]}>
-    <Text style={styles.text}>{text}</Text>
-  </TouchableOpacity>
-);
+const Button: React.SFC<Props> = ({style, text, ...props}) => {
+  const {disabled} = props;
+
+  return (
+    <TouchableOpacity
+      {...props}
+      style={[styles.container, disabled && {opacity: 0.5}, style]}>
+      <Text style={[styles.text, {fontWeight: 'bold'}]}>{text}</Text>
+    </TouchableOpacity>
+  );
+};
 
 export default Button;

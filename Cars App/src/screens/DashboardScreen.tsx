@@ -38,7 +38,7 @@ const DashboardScreen = ({navigation}: Props) => {
     headerRight: () => (
       <HeaderButton
         text="Add Car"
-        onPress={() => navigation.navigate('AddCar', {onAdd: addCar})}
+        onPress={() => navigation.navigate('CarDetail', {onComplete: addCar})}
       />
     ),
   });

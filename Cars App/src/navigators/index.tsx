@@ -2,15 +2,14 @@ import * as React from 'react';
 import {createStackNavigator, StackScreenProps} from '@react-navigation/stack';
 
 import DashboardScreen from 'src/screens/DashboardScreen';
-import AddCarScreen from 'src/screens/AddCarScreen';
+import CarDetailScreen from 'src/screens/CarDetailScreen';
 
 import {color} from 'src/styles';
 
 type RootStackParamList = {
   Dashboard: undefined;
-  CarDetails: undefined;
-  AddCar: {
-    onAdd: (car: Car) => void;
+  CarDetail: {
+    onComplete: (car: Car) => void;
   };
 };
 
@@ -30,7 +29,7 @@ const RootStack = () => (
       headerTintColor: color.black,
     }}>
     <Stack.Screen name="Dashboard" component={DashboardScreen} />
-    <Stack.Screen name="AddCar" component={AddCarScreen} />
+    <Stack.Screen name="CarDetail" component={CarDetailScreen} />
   </Stack.Navigator>
 );
 

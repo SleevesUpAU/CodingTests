@@ -9,12 +9,12 @@ import Button from 'src/components/Button';
 import parseUtil from 'src/utils/parseUtil';
 import validationUtil from 'src/utils/validationUtil';
 
-type Props = RootStackScreenProps<'AddCar'>;
+type Props = RootStackScreenProps<'CarDetail'>;
 
 const AddCarScreen = ({
   navigation,
   route: {
-    params: {onAdd},
+    params: {onComplete},
   },
 }: Props) => {
   const [initialPrice, setInitialPrice] = useState<string>();
@@ -60,7 +60,7 @@ const AddCarScreen = ({
             currentPriceNumber !== undefined &&
             !!company
           ) {
-            onAdd({
+            onComplete({
               id: uuidv4(),
               initialPrice: initialPriceNumber,
               currentPrice: currentPriceNumber,

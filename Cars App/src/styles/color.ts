@@ -9,4 +9,6 @@ export default {
   neutral: '#D3CBC6',
   neutralDark: '#7A797F',
   black: '#212738',
+
+  error: '#cc0000',
 };

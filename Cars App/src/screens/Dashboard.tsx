@@ -6,7 +6,7 @@ import {RootStackParamList} from 'src/navigators';
 import Screen from 'src/components/Screen';
 import Button from 'src/components/Button';
 
-type Props = StackScreenProps<RootStackParamList, 'CarDetails'>;
+type Props = StackScreenProps<RootStackParamList, 'Dashboard'>;
 
 const Dashboard = ({navigation}: Props) => (
   <Screen>

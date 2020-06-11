@@ -49,3 +49,26 @@ If you don't have time to implement something please document it in the README a
 If you have any designs outside of code please bring them to the interview
 
 Thank you!
+
+## Coding Challenge
+
+Done by Mateusz Siniarski
+
+### Tools used
+
+react-native cli
+yarn
+xcode
+typescript
+
+### Notes
+
+Project was setup with typescript template using
+
+```bash
+npx react-native init cars --template react-native-template-typescript
+```
+
+### References
+
+[Using TypeScript with React Native](https://reactnative.dev/docs/typescript)

@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, TextInputProps, View} from 'react-native';
+import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
+
+import Text from 'src/components/Text';
 
 import {color, constant} from 'src/styles';
 

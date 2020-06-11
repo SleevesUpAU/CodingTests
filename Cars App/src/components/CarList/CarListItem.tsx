@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 
 import Text from 'src/components/Text';
 
@@ -7,24 +7,28 @@ import {color, constant} from 'src/styles';
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
+    alignItems: 'center',
     margin: constant.space.base,
     padding: constant.space.base,
+    paddingRight: 0,
     backgroundColor: color.neutral,
     borderColor: color.black,
     borderWidth: constant.border.base,
     borderRadius: constant.radius.base,
   },
-  leftText: {
-    fontWeight: 'bold',
+  carDetails: {
+    flex: 1,
   },
   exit: {
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: constant.size.base,
     minWidth: constant.size.base,
-    position: 'absolute',
-    top: 0,
-    right: 0,
+  },
+  exitText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
 
@@ -37,34 +41,31 @@ type Props = {
 const getPriceText = (
   delta: number,
 ): {
-  color: string;
+  textColor: string;
   text: string;
 } => {
   if (delta > 0) {
-    return {color: color.success, text: `+ ${delta}`};
+    return {textColor: color.success, text: `+ ${delta}`};
   } else if (delta < 0) {
-    return {color: color.error, text: `- ${delta * -1}`};
+    return {textColor: color.error, text: `- ${delta * -1}`};
   }
-  return {color: color.neutralDark, text: '0'};
+  return {textColor: color.neutralDark, text: '0'};
 };
 
 const CarListItem: React.SFC<Props> = ({car, onPress, onRemove}) => {
   const {initialPrice, currentPrice = initialPrice, company, model} = car;
 
-  const {color, text} = getPriceText(currentPrice - initialPrice);
+  const {textColor, text} = getPriceText(currentPrice - initialPrice);
 
   return (
     <TouchableOpacity style={styles.container} onPress={() => onPress(car)}>
-      <Text>
-        <Text style={styles.leftText}>{company} </Text>
+      <View style={styles.carDetails}>
+        <Text>{company}</Text>
         <Text>{model}</Text>
-      </Text>
-      <Text style={{textAlignVertical: 'center'}}>
-        <Text style={styles.leftText}>Price Change : </Text>
-        <Text style={{color, textAlignVertical: 'center'}}>{text}</Text>
-      </Text>
+      </View>
+      <Text style={{color: textColor}}>{text}</Text>
       <TouchableOpacity style={styles.exit} onPress={() => onRemove(car)}>
-        <Text style={{fontSize: 20, fontWeight: 'bold'}}>X</Text>
+        <Text style={styles.exitText}>X</Text>
       </TouchableOpacity>
     </TouchableOpacity>
   );

@@ -18,9 +18,13 @@ const styles = StyleSheet.create({
     borderRadius: constant.radius.base,
     backgroundColor: color.primaryLight,
   },
+  disabled: {
+    opacity: 0.5,
+  },
   text: {
     color: color.black,
     textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
 
@@ -34,8 +38,8 @@ const Button: React.SFC<Props> = ({style, text, ...props}) => {
   return (
     <TouchableOpacity
       {...props}
-      style={[styles.container, disabled && {opacity: 0.5}, style]}>
-      <Text style={[styles.text, {fontWeight: 'bold'}]}>{text}</Text>
+      style={[styles.container, disabled && styles.disabled, style]}>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 };

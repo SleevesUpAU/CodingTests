@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     borderWidth: constant.border.base,
     borderRadius: constant.radius.base,
   },
+  leftText: {
+    fontWeight: 'bold',
+  },
   exit: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -31,14 +34,35 @@ type Props = {
   onRemove: (car: Car) => void;
 };
 
+const getPriceText = (
+  delta: number,
+): {
+  color: string;
+  text: string;
+} => {
+  if (delta > 0) {
+    return {color: color.success, text: `+ ${delta}`};
+  } else if (delta < 0) {
+    return {color: color.error, text: `- ${delta * -1}`};
+  }
+  return {color: color.neutralDark, text: '0'};
+};
+
 const CarListItem: React.SFC<Props> = ({car, onPress, onRemove}) => {
-  const {initialPrice, currentPrice, company} = car;
+  const {initialPrice, currentPrice = initialPrice, company, model} = car;
+
+  const {color, text} = getPriceText(currentPrice - initialPrice);
 
   return (
     <TouchableOpacity style={styles.container} onPress={() => onPress(car)}>
-      <Text>{initialPrice}</Text>
-      <Text>{currentPrice}</Text>
-      <Text>{company}</Text>
+      <Text>
+        <Text style={styles.leftText}>{company} </Text>
+        <Text>{model}</Text>
+      </Text>
+      <Text style={{textAlignVertical: 'center'}}>
+        <Text style={styles.leftText}>Price Change : </Text>
+        <Text style={{color, textAlignVertical: 'center'}}>{text}</Text>
+      </Text>
       <TouchableOpacity style={styles.exit} onPress={() => onRemove(car)}>
         <Text style={{fontSize: 20, fontWeight: 'bold'}}>X</Text>
       </TouchableOpacity>

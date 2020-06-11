@@ -11,4 +11,5 @@ export default {
   black: '#212738',
 
   error: '#cc0000',
+  success: '#00cc00',
 };

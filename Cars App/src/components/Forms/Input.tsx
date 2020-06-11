@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
+import {StyleSheet, TextInput, TextInputProps} from 'react-native';
 
 import RowBase, {Props as BaseProps} from './RowBase';
 

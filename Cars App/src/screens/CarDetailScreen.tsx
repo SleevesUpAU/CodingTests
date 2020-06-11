@@ -5,6 +5,7 @@ import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 import Input from 'src/components/Forms/Input';
+import Selector from 'src/components/Forms/Selector';
 import Button from 'src/components/Button';
 import Text from 'src/components/Text';
 
@@ -67,11 +68,11 @@ const AddCarScreen = ({
         value={currentPrice}
         onChangeText={handleNumberChange(setCurrentPrice)}
       />
-      <Input
+      <Selector
         label="Company"
-        keyboardType="ascii-capable"
         value={company}
-        onChangeText={setCompany}
+        options={['adssda', 'adsasdadsasd']}
+        onChange={setCompany}
       />
       <Input
         label="Model"

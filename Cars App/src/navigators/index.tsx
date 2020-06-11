@@ -8,7 +8,9 @@ import AddCarScreen from 'src/screens/AddCarScreen';
 type RootStackParamList = {
   Dashboard: undefined;
   CarDetails: undefined;
-  AddCar: undefined;
+  AddCar: {
+    onAdd: (car: Car) => void;
+  };
 };
 
 export type RootStackScreenProps<

@@ -17,17 +17,23 @@ const mockData: Car[] = [
 ];
 
 const DashboardScreen = ({navigation}: Props) => {
-  navigation.setOptions({
-    headerRight: () => (
-      <Button title="Add Car" onPress={() => navigation.navigate('AddCar')} />
-    ),
-  });
-
   const [cars, setCars] = useState(mockData);
 
+  const addCar = (car: Car) => {
+    setCars([car, ...cars]);
+  };
   const removeCar = ({id: idToRemove}: Car) => {
     setCars(cars.filter((car) => car.id !== idToRemove));
   };
+
+  navigation.setOptions({
+    headerRight: () => (
+      <Button
+        title="Add Car"
+        onPress={() => navigation.navigate('AddCar', {onAdd: addCar})}
+      />
+    ),
+  });
 
   return (
     <Screen>

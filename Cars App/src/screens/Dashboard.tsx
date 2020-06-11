@@ -1,12 +1,11 @@
 import React from 'react';
-import {StackScreenProps} from '@react-navigation/stack';
 
-import {RootStackParamList} from 'src/navigators';
+import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 import Button from 'src/components/Button';
 
-type Props = StackScreenProps<RootStackParamList, 'Dashboard'>;
+type Props = RootStackScreenProps<'Dashboard'>;
 
 const Dashboard = ({navigation}: Props) => (
   <Screen>

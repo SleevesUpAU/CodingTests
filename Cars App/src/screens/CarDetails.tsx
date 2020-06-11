@@ -1,7 +1,11 @@
 import React from 'react';
 
-import Button from 'src/components/Button';
+import {RootStackScreenProps} from 'src/navigators';
+
 import Screen from 'src/components/Screen';
+import Button from 'src/components/Button';
+
+type Props = RootStackScreenProps<'CarDetails'>;
 
 const CarDetails = () => (
   <Screen>

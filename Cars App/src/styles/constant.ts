@@ -8,4 +8,7 @@ export default {
   border: {
     base: 2,
   },
+  size: {
+    base: 40,
+  },
 };

@@ -14,6 +14,15 @@ const styles = StyleSheet.create({
     borderWidth: constant.border.base,
     borderRadius: constant.radius.base,
   },
+  exit: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: constant.size.base,
+    minWidth: constant.size.base,
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
 });
 
 type Props = {
@@ -30,8 +39,8 @@ const CarListItem: React.SFC<Props> = ({car, onPress, onRemove}) => {
       <Text>{initialPrice}</Text>
       <Text>{currentPrice}</Text>
       <Text>{company}</Text>
-      <TouchableOpacity onPress={() => onRemove(car)}>
-        <Text>X</Text>
+      <TouchableOpacity style={styles.exit} onPress={() => onRemove(car)}>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>X</Text>
       </TouchableOpacity>
     </TouchableOpacity>
   );

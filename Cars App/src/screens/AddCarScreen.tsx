@@ -33,20 +33,20 @@ const AddCarScreen = ({
   return (
     <Screen>
       <Input
+        label="Initial Price ($)"
         keyboardType="decimal-pad"
-        placeholder="Initial Price"
         value={initialPrice}
         onChangeText={handleNumberChange(setInitialPrice)}
       />
       <Input
+        label="Current Price ($)"
         keyboardType="decimal-pad"
-        placeholder="Current Price"
         value={currentPrice}
         onChangeText={handleNumberChange(setCurrentPrice)}
       />
       <Input
+        label="Company"
         keyboardType="ascii-capable"
-        placeholder="Company"
         value={company}
         onChangeText={setCompany}
       />

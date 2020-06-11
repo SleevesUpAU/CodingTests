@@ -86,6 +86,8 @@ Project was setup with typescript template using
 npx react-native init cars --template react-native-template-typescript
 ```
 
+Inputs/Forms using labels instead of placeholders doesnt really make sense on mobile devices where space is important
+
 ### References
 
 - [Using TypeScript with React Native](https://reactnative.dev/docs/typescript)

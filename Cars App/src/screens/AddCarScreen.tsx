@@ -1,14 +1,13 @@
 import {v4 as uuidv4} from 'uuid';
 import React, {useState} from 'react';
-import {Button} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 import Input from 'src/components/Input';
+import Button from 'src/components/Button';
 
 import parseUtil from 'src/utils/parseUtil';
 import validationUtil from 'src/utils/validationUtil';
-import {color} from 'src/styles';
 
 type Props = RootStackScreenProps<'AddCar'>;
 
@@ -51,8 +50,7 @@ const AddCarScreen = ({
         onChangeText={setCompany}
       />
       <Button
-        title="Add Car"
-        color={color.secondary}
+        text="Add Car"
         onPress={() => {
           const initialPriceNumber = parseUtil.getFloat(initialPrice);
           const currentPriceNumber = parseUtil.getFloat(currentPrice);

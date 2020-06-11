@@ -14,12 +14,18 @@ type Props = RootStackScreenProps<'CarDetail'>;
 const AddCarScreen = ({
   navigation,
   route: {
-    params: {onComplete},
+    params: {car, onComplete},
   },
 }: Props) => {
-  const [initialPrice, setInitialPrice] = useState<string>();
-  const [currentPrice, setCurrentPrice] = useState<string>();
-  const [company, setCompany] = useState<string>();
+  const [initialPrice, setInitialPrice] = useState(
+    car ? car.initialPrice.toString() : undefined,
+  );
+  const [currentPrice, setCurrentPrice] = useState(
+    car && car.currentPrice ? car.currentPrice.toString() : undefined,
+  );
+  const [company, setCompany] = useState(
+    car ? car.company.toString() : undefined,
+  );
 
   const handleNumberChange = (setString: (text: string) => void) => (
     text: string,
@@ -50,7 +56,7 @@ const AddCarScreen = ({
         onChangeText={setCompany}
       />
       <Button
-        text="Add Car"
+        text={car ? 'Save Car Details' : 'Add Car Entry'}
         onPress={() => {
           const initialPriceNumber = parseUtil.getFloat(initialPrice);
           const currentPriceNumber = parseUtil.getFloat(currentPrice);
@@ -61,7 +67,7 @@ const AddCarScreen = ({
             !!company
           ) {
             onComplete({
-              id: uuidv4(),
+              id: car ? car.id : uuidv4(),
               initialPrice: initialPriceNumber,
               currentPrice: currentPriceNumber,
               company,

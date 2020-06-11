@@ -9,6 +9,7 @@ import {color} from 'src/styles';
 type RootStackParamList = {
   Dashboard: undefined;
   CarDetail: {
+    car?: Car;
     onComplete: (car: Car) => void;
   };
 };

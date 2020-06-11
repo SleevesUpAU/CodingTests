@@ -20,8 +20,8 @@ const mockData: Car[] = [
 const DashboardScreen = ({navigation}: Props) => {
   const [cars, setCars] = useState(mockData);
 
-  const addCar = (car: Car) => {
-    setCars([car, ...cars]);
+  const addEditCar = (car: Car) => {
+    setCars([car, ...cars.filter(({id}) => id !== car.id)]);
   };
   const removeCar = ({id: idToRemove}: Car) => {
     Alert.alert('Confirm Remove', 'You are sure you want to remove a car?', [
@@ -38,7 +38,9 @@ const DashboardScreen = ({navigation}: Props) => {
     headerRight: () => (
       <HeaderButton
         text="Add Car"
-        onPress={() => navigation.navigate('CarDetail', {onComplete: addCar})}
+        onPress={() =>
+          navigation.navigate('CarDetail', {onComplete: addEditCar})
+        }
       />
     ),
   });
@@ -47,7 +49,9 @@ const DashboardScreen = ({navigation}: Props) => {
     <Screen>
       <CarList
         cars={cars}
-        onPress={() => console.log('Car pressed')}
+        onPress={(car) =>
+          navigation.navigate('CarDetail', {car, onComplete: addEditCar})
+        }
         onRemove={removeCar}
       />
     </Screen>

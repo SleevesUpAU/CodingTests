@@ -54,12 +54,35 @@ Thank you!
 
 Done by Mateusz Siniarski
 
-### Tools used
+### Requirements
 
-react-native cli
+Please follow the [Environment Setup](https://reactnative.dev/docs/environment-setup) with the React-Native CLI Quickstart as this project does not use Expo
+
+## How to run
+
+Pull dependencies
+
+```bash
 yarn
-xcode
-typescript
+```
+
+(iOS ONLY) Pull Pod Dependencies
+
+```bash
+pod install --project-directory=ios
+```
+
+Run build on XCode Simulator OR Android Emulator
+
+```bash
+yarn android
+```
+
+OR
+
+```bash
+yarn ios
+```
 
 ### Notes
 

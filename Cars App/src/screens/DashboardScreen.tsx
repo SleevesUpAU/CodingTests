@@ -6,7 +6,8 @@ import Screen from 'src/components/Screen';
 
 type Props = RootStackScreenProps<'Dashboard'>;
 
-const Dashboard = ({navigation}: Props) => {
+
+const DashboardScreen = ({navigation}: Props) => {
   navigation.setOptions({
     headerRight: () => (
       <Button title="Add Car" onPress={() => navigation.navigate('AddCar')} />
@@ -25,4 +26,4 @@ const Dashboard = ({navigation}: Props) => {
   );
 };
 
-export default Dashboard;
+export default DashboardScreen;

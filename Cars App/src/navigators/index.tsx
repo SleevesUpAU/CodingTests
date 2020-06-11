@@ -1,10 +1,9 @@
 import * as React from 'react';
-import {Button} from 'react-native';
 import {createStackNavigator, StackScreenProps} from '@react-navigation/stack';
 
-import Dashboard from 'src/screens/Dashboard';
-import CarDetails from 'src/screens/CarDetails';
-import AddCar from 'src/screens/AddCar';
+import DashboardScreen from 'src/screens/DashboardScreen';
+import CarDetailScreen from 'src/screens/CarDetailScreen';
+import AddCarScreen from 'src/screens/AddCarScreen';
 
 type RootStackParamList = {
   Dashboard: undefined;
@@ -20,9 +19,9 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 const RootStack = () => (
   <Stack.Navigator initialRouteName="Dashboard">
-    <Stack.Screen name="Dashboard" component={Dashboard} />
-    <Stack.Screen name="CarDetails" component={CarDetails} />
-    <Stack.Screen name="AddCar" component={AddCar} />
+    <Stack.Screen name="Dashboard" component={DashboardScreen} />
+    <Stack.Screen name="CarDetails" component={CarDetailScreen} />
+    <Stack.Screen name="AddCar" component={AddCarScreen} />
   </Stack.Navigator>
 );
 

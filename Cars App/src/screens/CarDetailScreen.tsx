@@ -1,20 +1,21 @@
 import React from 'react';
 import {Button} from 'react-native';
+
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 
-type Props = RootStackScreenProps<'AddCar'>;
+type Props = RootStackScreenProps<'CarDetails'>;
 
-const AddCar = ({navigation}: Props) => (
+const CarDetailScreen = () => (
   <Screen>
     <Button
-      title="Add Car"
+      title="CarDetails Button"
       onPress={() => {
-        navigation.goBack();
+        console.log('Pressed');
       }}
     />
   </Screen>
 );
 
-export default AddCar;
+export default CarDetailScreen;

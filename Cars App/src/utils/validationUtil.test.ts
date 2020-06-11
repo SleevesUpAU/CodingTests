@@ -1,6 +1,6 @@
 import cases from 'jest-in-case';
 
-import validationUtil from 'src/utils/validationUtil';
+import validationUtil from './validationUtil';
 
 describe('validationUtil.isValidFloatString', () => {
   cases(

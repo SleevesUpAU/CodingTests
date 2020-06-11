@@ -5,6 +5,7 @@ import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 
+import parseUtil from 'src/utils/parseUtil';
 import validationUtil from 'src/utils/validationUtil';
 
 type Props = RootStackScreenProps<'AddCar'>;
@@ -50,15 +51,18 @@ const AddCarScreen = ({
       <Button
         title="Add Car"
         onPress={() => {
+          const initialPriceNumber = parseUtil.getFloat(initialPrice);
+          const currentPriceNumber = parseUtil.getFloat(currentPrice);
+
           if (
-            initialPrice !== undefined &&
-            currentPrice !== undefined &&
+            initialPriceNumber !== undefined &&
+            currentPriceNumber !== undefined &&
             !!company
           ) {
             onAdd({
               id: uuidv4(),
-              initialPrice,
-              currentPrice,
+              initialPrice: initialPriceNumber,
+              currentPrice: currentPriceNumber,
               company,
             });
             navigation.goBack();

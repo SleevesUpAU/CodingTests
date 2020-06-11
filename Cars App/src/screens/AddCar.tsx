@@ -6,12 +6,12 @@ import Screen from 'src/components/Screen';
 
 type Props = RootStackScreenProps<'AddCar'>;
 
-const AddCar = () => (
+const AddCar = ({navigation}: Props) => (
   <Screen>
     <Button
-      title="CarDetails Button"
+      title="Add Car"
       onPress={() => {
-        console.log('Pressed');
+        navigation.goBack();
       }}
     />
   </Screen>

@@ -3,6 +3,7 @@ import {Button} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
+import CarList from 'src/components/CarList';
 
 type Props = RootStackScreenProps<'Dashboard'>;
 
@@ -24,6 +25,7 @@ const DashboardScreen = ({navigation}: Props) => {
 
   return (
     <Screen>
+      <CarList items={mockData} />
       <Button
         title="Dashboard Button"
         onPress={() => {

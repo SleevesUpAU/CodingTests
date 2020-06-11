@@ -95,3 +95,5 @@ npx react-native init cars --template react-native-template-typescript
 - [How to setup module resolution and path aliases with React Native and TypeScript](https://medium.com/@aleksefo/how-to-setup-module-resolution-and-path-aliases-with-react-native-and-typescript-f4924669780a)
 - [React-Navigation : Type checking with TypeScript](https://reactnavigation.org/docs/typescript)
 - [React-Navigation : Header Buttons](https://reactnavigation.org/docs/header-buttons/)
+- [Coolors](https://coolors.co)
+- [Color Blender](https://meyerweb.com/eric/tools/color-blend/#:::hex)

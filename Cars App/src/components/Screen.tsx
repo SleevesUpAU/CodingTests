@@ -1,10 +1,14 @@
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar, View} from 'react-native';
 
-const Screen: React.SFC = (props) => (
+import {color} from 'src/styles';
+
+const Screen: React.SFC = ({children}) => (
   <>
     <StatusBar barStyle="dark-content" />
-    <SafeAreaView {...props} />
+    <SafeAreaView style={{flex: 1, backgroundColor: color.primaryLight}}>
+      <View style={{flex: 1, backgroundColor: color.neutral}}>{children}</View>
+    </SafeAreaView>
   </>
 );
 

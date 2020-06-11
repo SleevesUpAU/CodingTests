@@ -1,22 +1,12 @@
 import React from 'react';
 import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
 
-import Text from 'src/components/Text';
+import RowBase, {Props as BaseProps} from './RowBase';
 
 import {color, constant} from 'src/styles';
 
 const styles = StyleSheet.create({
-  container: {
-    margin: constant.space.base,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  label: {
-    flex: 1,
-    marginRight: constant.space.base,
-  },
   input: {
-    flex: 2,
     padding: constant.space.base,
     borderColor: color.black,
     borderWidth: constant.border.base,
@@ -25,17 +15,12 @@ const styles = StyleSheet.create({
   },
 });
 
-interface Props extends TextInputProps {
-  label: string;
-}
+type Props = BaseProps & TextInputProps;
 
 const Input = ({label, style, ...props}: Props) => (
-  <View style={styles.container}>
-    <Text style={styles.label} ellipsizeMode="tail" numberOfLines={1}>
-      {label}
-    </Text>
+  <RowBase label={label}>
     <TextInput {...props} style={[styles.input, style]} />
-  </View>
+  </RowBase>
 );
 
 export default Input;

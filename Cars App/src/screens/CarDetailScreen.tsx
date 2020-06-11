@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
-import Input from 'src/components/Input';
+import Input from 'src/components/Forms/Input';
 import Button from 'src/components/Button';
 import Text from 'src/components/Text';
 

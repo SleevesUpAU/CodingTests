@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid';
 import React, {useState} from 'react';
 import {Button, TextInput} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
@@ -55,7 +56,7 @@ const AddCarScreen = ({
             !!company
           ) {
             onAdd({
-              id: 1,
+              id: uuidv4(),
               initialPrice,
               currentPrice,
               company,

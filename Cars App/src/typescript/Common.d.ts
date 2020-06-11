@@ -1,5 +1,5 @@
 type Car = {
-  id: number;
+  id: string;
   initialPrice: number;
   currentPrice: number | undefined;
   company: string;

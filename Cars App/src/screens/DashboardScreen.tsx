@@ -9,7 +9,7 @@ type Props = RootStackScreenProps<'Dashboard'>;
 
 const mockData: Car[] = [
   {
-    id: 1,
+    id: '1',
     initialPrice: 1000,
     currentPrice: 800,
     company: 'Toyota',

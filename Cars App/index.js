@@ -1,3 +1,4 @@
+import 'react-native-get-random-values'; // uuid setup requirement
 import 'react-native-gesture-handler'; // react-navigation setup requirement
 import {AppRegistry, YellowBox} from 'react-native';
 import App from './src';

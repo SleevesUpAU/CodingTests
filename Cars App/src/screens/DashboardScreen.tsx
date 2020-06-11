@@ -13,7 +13,22 @@ const mockData: Car[] = [
     id: '1',
     initialPrice: 1000,
     currentPrice: 800,
-    company: 'Toyota',
+    company: 'Totoya',
+    model: 'Macery',
+  },
+  {
+    id: '2',
+    initialPrice: 2000,
+    currentPrice: 2000,
+    company: 'Dorf',
+    model: 'Ciesta',
+  },
+  {
+    id: '3',
+    initialPrice: 1000,
+    currentPrice: 2000,
+    company: 'Volkspanzer',
+    model: 'Minigolf',
   },
 ];
 

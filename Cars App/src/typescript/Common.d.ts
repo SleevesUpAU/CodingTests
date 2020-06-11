@@ -3,4 +3,5 @@ type Car = {
   initialPrice: number;
   currentPrice: number | undefined;
   company: string;
+  model: string;
 };

@@ -26,6 +26,7 @@ const AddCarScreen = ({
   const [company, setCompany] = useState(
     car ? car.company.toString() : undefined,
   );
+  const [model, setModel] = useState(car ? car.model.toString() : undefined);
 
   const handleNumberChange = (setString: (text: string) => void) => (
     text: string,
@@ -55,6 +56,12 @@ const AddCarScreen = ({
         value={company}
         onChangeText={setCompany}
       />
+      <Input
+        label="Model"
+        keyboardType="ascii-capable"
+        value={model}
+        onChangeText={setModel}
+      />
       <Button
         text={car ? 'Save Car Details' : 'Add Car Entry'}
         onPress={() => {
@@ -64,13 +71,15 @@ const AddCarScreen = ({
           if (
             initialPriceNumber !== undefined &&
             currentPriceNumber !== undefined &&
-            !!company
+            !!company &&
+            !!model
           ) {
             onComplete({
               id: car ? car.id : uuidv4(),
               initialPrice: initialPriceNumber,
               currentPrice: currentPriceNumber,
               company,
+              model,
             });
             navigation.goBack();
           }

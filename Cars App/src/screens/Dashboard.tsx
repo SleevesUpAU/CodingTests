@@ -9,7 +9,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Screen from '../components/Screen';
+import Screen from 'src/components/Screen';
 
 declare const global: {HermesInternal: null | {}};
 

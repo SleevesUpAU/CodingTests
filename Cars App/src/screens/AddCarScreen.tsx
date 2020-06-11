@@ -4,7 +4,7 @@ import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 
-import parseUtil from 'src/utils/parseUtil';
+import validationUtil from 'src/utils/validationUtil';
 
 type Props = RootStackScreenProps<'AddCar'>;
 
@@ -21,7 +21,7 @@ const AddCarScreen = ({
   const handleNumberChange = (setString: (text: string) => void) => (
     text: string,
   ) => {
-    if (parseUtil.isValidFloatString(text)) {
+    if (validationUtil.isFloatString(text)) {
       setString(text);
     }
   };

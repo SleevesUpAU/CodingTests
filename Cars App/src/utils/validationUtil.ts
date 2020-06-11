@@ -1,5 +1,5 @@
 export default {
-  isValidFloatString: (str: string | null | undefined): boolean => {
+  isFloatString: (str: string | null | undefined): boolean => {
     if (str) {
       if (str.split('.').length > 2) {
         return false;

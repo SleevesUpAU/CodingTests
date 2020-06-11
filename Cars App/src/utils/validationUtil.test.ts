@@ -1,12 +1,12 @@
 import cases from 'jest-in-case';
 
-import parseUtil from 'src/utils/parseUtil';
+import validationUtil from 'src/utils/validationUtil';
 
-describe('parseUtil.isValidFloatString', () => {
+describe('validationUtil.isValidFloatString', () => {
   cases(
     'when inputing valid strings, expect true',
     ({input}) => {
-      const result = parseUtil.isValidFloatString(input);
+      const result = validationUtil.isFloatString(input);
 
       expect(result).toBeTruthy();
     },
@@ -29,7 +29,7 @@ describe('parseUtil.isValidFloatString', () => {
   cases(
     'when inputing invalid strings, expect false',
     ({input}) => {
-      const result = parseUtil.isValidFloatString(input);
+      const result = validationUtil.isFloatString(input);
 
       expect(result).toBeFalsy();
     },

@@ -66,12 +66,6 @@ Pull dependencies
 yarn
 ```
 
-(iOS ONLY) Pull Pod Dependencies
-
-```bash
-pod install --project-directory=ios
-```
-
 Run build on XCode Simulator OR Android Emulator
 
 ```bash

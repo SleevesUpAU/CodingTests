@@ -3,12 +3,12 @@ import React from 'react';
 import Button from 'src/components/Button';
 import Screen from 'src/components/Screen';
 
-const Dashboard = () => (
+const Dashboard = ({navigation}) => (
   <Screen>
     <Button
       text="Dashboard Button"
       onPress={() => {
-        console.log('Pressed');
+        navigation.navigate('CarDetails');
       }}
     />
   </Screen>

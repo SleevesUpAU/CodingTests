@@ -1,13 +1,21 @@
 import {v4 as uuidv4} from 'uuid';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 import Input from 'src/components/Input';
 import Button from 'src/components/Button';
+import Text from 'src/components/Text';
 
 import parseUtil from 'src/utils/parseUtil';
 import validationUtil from 'src/utils/validationUtil';
+
+const styles = StyleSheet.create({
+  error: {
+    alignSelf: 'center',
+  },
+});
 
 type Props = RootStackScreenProps<'CarDetail'>;
 
@@ -27,6 +35,15 @@ const AddCarScreen = ({
     car ? car.company.toString() : undefined,
   );
   const [model, setModel] = useState(car ? car.model.toString() : undefined);
+
+  const [hasError, setError] = useState(false);
+
+  useEffect(() => setError(false), [
+    initialPrice,
+    currentPrice,
+    company,
+    model,
+  ]);
 
   const handleNumberChange = (setString: (text: string) => void) => (
     text: string,
@@ -62,8 +79,14 @@ const AddCarScreen = ({
         value={model}
         onChangeText={setModel}
       />
+      {hasError && (
+        <Text style={styles.error} isError>
+          Looks like we are missing some data
+        </Text>
+      )}
       <Button
         text={car ? 'Save Car Details' : 'Add Car Entry'}
+        disabled={hasError}
         onPress={() => {
           const initialPriceNumber = parseUtil.getFloat(initialPrice);
           const currentPriceNumber = parseUtil.getFloat(currentPrice);
@@ -82,6 +105,8 @@ const AddCarScreen = ({
               model,
             });
             navigation.goBack();
+          } else {
+            setError(true);
           }
         }}
       />

@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   },
   label: {
     flex: 1,
-    color: color.black,
     marginRight: constant.space.base,
   },
   input: {

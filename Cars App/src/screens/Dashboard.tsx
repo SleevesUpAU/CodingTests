@@ -1,16 +1,15 @@
 import React from 'react';
-
+import {Button} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
-import Button from 'src/components/Button';
 
 type Props = RootStackScreenProps<'Dashboard'>;
 
 const Dashboard = ({navigation}: Props) => (
   <Screen>
     <Button
-      text="Dashboard Button"
+      title="Dashboard Button"
       onPress={() => {
         navigation.navigate('CarDetails');
       }}

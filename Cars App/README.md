@@ -95,3 +95,5 @@ npx react-native init cars --template react-native-template-typescript
 ### References
 
 [Using TypeScript with React Native](https://reactnative.dev/docs/typescript)
+[Sample React Native App](https://github.com/facebook/react-native)
+[Generated with the TypeScript template](https://github.com/react-native-community/react-native-template-typescript)

@@ -5,6 +5,7 @@ import {RootStackScreenProps} from 'src/navigators';
 import Screen from 'src/components/Screen';
 import CarList from 'src/components/CarList';
 import {color} from 'src/styles';
+import HeaderButton from 'src/components/HeaderButton';
 
 type Props = RootStackScreenProps<'Dashboard'>;
 
@@ -29,9 +30,8 @@ const DashboardScreen = ({navigation}: Props) => {
 
   navigation.setOptions({
     headerRight: () => (
-      <Button
-        title="Add Car"
-        color={color.black}
+      <HeaderButton
+        text="Add Car"
         onPress={() => navigation.navigate('AddCar', {onAdd: addCar})}
       />
     ),

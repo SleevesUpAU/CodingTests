@@ -1,11 +1,17 @@
 import React from 'react';
 import {Text} from 'react-native';
 
+import Button from 'src/components/Button';
 import Screen from 'src/components/Screen';
 
 const Dashboard = () => (
   <Screen>
-    <Text>Dashboard</Text>
+    <Button
+      text="Test Button"
+      onPress={() => {
+        console.log('Pressed');
+      }}
+    />
   </Screen>
 );
 

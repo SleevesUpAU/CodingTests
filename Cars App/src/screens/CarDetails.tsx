@@ -3,10 +3,10 @@ import React from 'react';
 import Button from 'src/components/Button';
 import Screen from 'src/components/Screen';
 
-const Dashboard = () => (
+const CarDetails = () => (
   <Screen>
     <Button
-      text="Dashboard Button"
+      text="CarDetails Button"
       onPress={() => {
         console.log('Pressed');
       }}
@@ -14,4 +14,4 @@ const Dashboard = () => (
   </Screen>
 );
 
-export default Dashboard;
+export default CarDetails;

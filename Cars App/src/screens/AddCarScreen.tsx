@@ -14,8 +14,8 @@ const AddCarScreen = ({
     params: {onAdd},
   },
 }: Props) => {
-  const [initialPrice, setInitialPrice] = useState<number>();
-  const [currentPrice, setCurrentPrice] = useState<number>();
+  const [initialPrice, setInitialPrice] = useState<string>();
+  const [currentPrice, setCurrentPrice] = useState<string>();
   const [company, setCompany] = useState<string>();
 
   return (
@@ -24,31 +24,19 @@ const AddCarScreen = ({
         keyboardType="decimal-pad"
         placeholder="Initial Price"
         value={initialPrice !== undefined ? initialPrice.toString() : undefined}
-        onChangeText={(text) => {
-          const number = parseUtil.getFloat(text);
-
-          if (initialPrice !== number) {
-            setCurrentPrice(number);
-          }
-        }}
+        onChangeText={setInitialPrice}
       />
       <TextInput
         keyboardType="decimal-pad"
         placeholder="Current Price"
         value={currentPrice !== undefined ? currentPrice.toString() : undefined}
-        onChangeText={(text) => {
-          const number = parseUtil.getFloat(text);
-
-          if (currentPrice !== number) {
-            setCurrentPrice(number);
-          }
-        }}
+        onChangeText={setCurrentPrice}
       />
       <TextInput
         keyboardType="ascii-capable"
         placeholder="Company"
         value={company !== undefined ? company.toString() : undefined}
-        onChangeText={(text) => setCompany(text)}
+        onChangeText={setCompany}
       />
       <Button
         title="Add Car"

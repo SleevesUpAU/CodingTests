@@ -7,7 +7,9 @@ const Screen: React.SFC = ({children}) => (
   <>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView style={{flex: 1, backgroundColor: color.primaryLight}}>
-      <View style={{flex: 1, backgroundColor: color.neutral}}>{children}</View>
+      <View style={{flex: 1, backgroundColor: color.neutralLight}}>
+        {children}
+      </View>
     </SafeAreaView>
   </>
 );

@@ -22,20 +22,31 @@ const AddCarScreen = ({
     <Screen>
       <TextInput
         keyboardType="decimal-pad"
+        placeholder="Initial Price"
         value={initialPrice !== undefined ? initialPrice.toString() : undefined}
         onChangeText={(text) => {
-          const number = setInitialPrice(parseUtil.getFloat(text));
+          const number = parseUtil.getFloat(text);
+
+          if (initialPrice !== number) {
+            setCurrentPrice(number);
+          }
         }}
       />
       <TextInput
         keyboardType="decimal-pad"
+        placeholder="Current Price"
         value={currentPrice !== undefined ? currentPrice.toString() : undefined}
         onChangeText={(text) => {
-          const number = setCurrentPrice(parseUtil.getFloat(text));
+          const number = parseUtil.getFloat(text);
+
+          if (currentPrice !== number) {
+            setCurrentPrice(number);
+          }
         }}
       />
       <TextInput
         keyboardType="ascii-capable"
+        placeholder="Company"
         value={company !== undefined ? company.toString() : undefined}
         onChangeText={(text) => setCompany(text)}
       />

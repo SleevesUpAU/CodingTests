@@ -1,6 +1,11 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 
-const Screen: React.SFC = (props) => <SafeAreaView {...props} />;
+const Screen: React.SFC = (props) => (
+  <>
+    <StatusBar barStyle="dark-content" />
+    <SafeAreaView {...props} />
+  </>
+);
 
 export default Screen;

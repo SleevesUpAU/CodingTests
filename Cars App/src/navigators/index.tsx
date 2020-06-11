@@ -4,12 +4,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Dashboard from 'src/screens/Dashboard';
 import CarDetails from 'src/screens/CarDetails';
 
-type StackParamList = {
-  Dashboard: {};
-  CarDetails: {};
+export type RootStackParamList = {
+  Dashboard: undefined;
+  CarDetails: undefined;
 };
 
-const Stack = createStackNavigator<StackParamList>();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const RootStack = () => (
   <Stack.Navigator initialRouteName="Dashboard">

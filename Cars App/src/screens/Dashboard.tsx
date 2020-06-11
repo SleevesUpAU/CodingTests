@@ -6,15 +6,23 @@ import Screen from 'src/components/Screen';
 
 type Props = RootStackScreenProps<'Dashboard'>;
 
-const Dashboard = ({navigation}: Props) => (
-  <Screen>
-    <Button
-      title="Dashboard Button"
-      onPress={() => {
-        navigation.navigate('CarDetails');
-      }}
-    />
-  </Screen>
-);
+const Dashboard = ({navigation}: Props) => {
+  navigation.setOptions({
+    headerRight: () => (
+      <Button title="Add Car" onPress={() => navigation.navigate('AddCar')} />
+    ),
+  });
+
+  return (
+    <Screen>
+      <Button
+        title="Dashboard Button"
+        onPress={() => {
+          navigation.navigate('CarDetails');
+        }}
+      />
+    </Screen>
+  );
+};
 
 export default Dashboard;

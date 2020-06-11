@@ -1,22 +1,38 @@
 import React from 'react';
-import {StyleSheet, TextInput, TextInputProps} from 'react-native';
+import {StyleSheet, Text, TextInput, TextInputProps, View} from 'react-native';
 
 import {color, constant} from 'src/styles';
 
 const styles = StyleSheet.create({
   container: {
     margin: constant.space.base,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  label: {
+    flex: 1,
+    color: color.black,
+    marginRight: constant.space.base,
+  },
+  input: {
+    flex: 2,
     padding: constant.space.base,
     borderColor: color.black,
     borderWidth: constant.border.base,
     borderRadius: constant.radius.base,
+    backgroundColor: color.white,
   },
 });
 
-type Props = TextInputProps;
+interface Props extends TextInputProps {
+  label: string;
+}
 
-const Input = ({style, ...props}: Props) => (
-  <TextInput {...props} style={[styles.container, style]} />
+const Input = ({label, style, ...props}: Props) => (
+  <View style={styles.container}>
+    <Text style={styles.label}>{label}</Text>
+    <TextInput {...props} style={[styles.input, style]} />
+  </View>
 );
 
 export default Input;

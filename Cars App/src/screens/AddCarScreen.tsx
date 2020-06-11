@@ -18,24 +18,32 @@ const AddCarScreen = ({
   const [currentPrice, setCurrentPrice] = useState<string>();
   const [company, setCompany] = useState<string>();
 
+  const handleNumberChange = (setString: (text: string) => void) => (
+    text: string,
+  ) => {
+    if (parseUtil.isValidFloatString(text)) {
+      setString(text);
+    }
+  };
+
   return (
     <Screen>
       <TextInput
         keyboardType="decimal-pad"
         placeholder="Initial Price"
-        value={initialPrice !== undefined ? initialPrice.toString() : undefined}
-        onChangeText={setInitialPrice}
+        value={initialPrice}
+        onChangeText={handleNumberChange(setInitialPrice)}
       />
       <TextInput
         keyboardType="decimal-pad"
         placeholder="Current Price"
-        value={currentPrice !== undefined ? currentPrice.toString() : undefined}
-        onChangeText={setCurrentPrice}
+        value={currentPrice}
+        onChangeText={handleNumberChange(setCurrentPrice)}
       />
       <TextInput
         keyboardType="ascii-capable"
         placeholder="Company"
-        value={company !== undefined ? company.toString() : undefined}
+        value={company}
         onChangeText={setCompany}
       />
       <Button

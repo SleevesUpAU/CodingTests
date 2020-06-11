@@ -32,7 +32,9 @@ interface Props extends TextInputProps {
 
 const Input = ({label, style, ...props}: Props) => (
   <View style={styles.container}>
-    <Text style={styles.label}>{label}</Text>
+    <Text style={styles.label} ellipsizeMode="tail" numberOfLines={1}>
+      {label}
+    </Text>
     <TextInput {...props} style={[styles.input, style]} />
   </View>
 );

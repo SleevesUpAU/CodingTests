@@ -18,17 +18,21 @@ const styles = StyleSheet.create({
 
 type Props = {
   car: Car;
+  onPress: (car: Car) => void;
   onRemove: (car: Car) => void;
 };
 
-const CarListItem: React.SFC<Props> = ({car, onRemove}) => {
+const CarListItem: React.SFC<Props> = ({car, onPress, onRemove}) => {
   const {initialPrice, currentPrice, company} = car;
 
   return (
-    <TouchableOpacity style={styles.container} onPress={() => onRemove(car)}>
+    <TouchableOpacity style={styles.container} onPress={() => onPress(car)}>
       <Text>{initialPrice}</Text>
       <Text>{currentPrice}</Text>
       <Text>{company}</Text>
+      <TouchableOpacity onPress={() => onRemove(car)}>
+        <Text>X</Text>
+      </TouchableOpacity>
     </TouchableOpacity>
   );
 };

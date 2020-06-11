@@ -5,13 +5,16 @@ import CarListItem from './CarListItem';
 
 type Props = {
   cars: Car[];
+  onPress: (car: Car) => void;
   onRemove: (car: Car) => void;
 };
 
-const CarList: React.SFC<Props> = ({cars, onRemove}) => (
+const CarList: React.SFC<Props> = ({cars, onPress, onRemove}) => (
   <FlatList
     data={cars}
-    renderItem={({item}) => <CarListItem car={item} onRemove={onRemove} />}
+    renderItem={({item}) => (
+      <CarListItem car={item} onPress={onPress} onRemove={onRemove} />
+    )}
     keyExtractor={({id}) => id.toString()}
   />
 );

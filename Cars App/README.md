@@ -99,3 +99,4 @@ Inputs/Forms using labels instead of placeholders doesnt really make sense on mo
 - [React-Navigation : Header Buttons](https://reactnavigation.org/docs/header-buttons/)
 - [Coolors](https://coolors.co)
 - [Color Blender](https://meyerweb.com/eric/tools/color-blend/#:::hex)
+- [React-Native : Alert](https://reactnative.dev/docs/alert)

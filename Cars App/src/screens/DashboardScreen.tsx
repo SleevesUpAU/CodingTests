@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import {Button} from 'react-native';
+import {Alert} from 'react-native';
 import {RootStackScreenProps} from 'src/navigators';
 
 import Screen from 'src/components/Screen';
 import CarList from 'src/components/CarList';
-import {color} from 'src/styles';
 import HeaderButton from 'src/components/HeaderButton';
 
 type Props = RootStackScreenProps<'Dashboard'>;
@@ -25,7 +24,14 @@ const DashboardScreen = ({navigation}: Props) => {
     setCars([car, ...cars]);
   };
   const removeCar = ({id: idToRemove}: Car) => {
-    setCars(cars.filter((car) => car.id !== idToRemove));
+    Alert.alert('Confirm Remove', 'You are sure you want to remove a car?', [
+      {
+        style: 'cancel',
+        text: 'Remove',
+        onPress: () => setCars(cars.filter((car) => car.id !== idToRemove)),
+      },
+      {text: 'Cancel'},
+    ]);
   };
 
   navigation.setOptions({
@@ -39,7 +45,11 @@ const DashboardScreen = ({navigation}: Props) => {
 
   return (
     <Screen>
-      <CarList cars={cars} onRemove={removeCar} />
+      <CarList
+        cars={cars}
+        onPress={() => console.log('Car pressed')}
+        onRemove={removeCar}
+      />
     </Screen>
   );
 };

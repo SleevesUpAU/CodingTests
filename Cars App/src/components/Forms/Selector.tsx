@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
   },
 });
 
-interface Props extends BaseProps {
-  value: string | undefined;
-  options: string[];
-  onChange: (value: string) => void;
+interface Props<T> extends BaseProps {
+  value: T | undefined;
+  options: T[];
+  onChange: (value: T) => void;
 }
 
-const Selector: React.SFC<Props> = ({label, value, options, onChange}) => {
+const Selector = <T,>({label, value, options, onChange}: Props<T>) => {
   const nextValue = (direction: -1 | 1) => {
     const l = options.length;
     if (l > 0) {

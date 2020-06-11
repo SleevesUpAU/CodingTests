@@ -32,9 +32,7 @@ const AddCarScreen = ({
   const [currentPrice, setCurrentPrice] = useState(
     car && car.currentPrice ? car.currentPrice.toString() : undefined,
   );
-  const [company, setCompany] = useState(
-    car ? car.company.toString() : undefined,
-  );
+  const [company, setCompany] = useState(car ? car.company : undefined);
   const [model, setModel] = useState(car ? car.model.toString() : undefined);
 
   const [hasError, setError] = useState(false);
@@ -71,7 +69,7 @@ const AddCarScreen = ({
       <Selector
         label="Company"
         value={company}
-        options={['adssda', 'adsasdadsasd']}
+        options={['Dorf', 'Totoya', 'Volkspanzer']}
         onChange={setCompany}
       />
       <Input

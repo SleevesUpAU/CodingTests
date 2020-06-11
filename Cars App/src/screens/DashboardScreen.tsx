@@ -6,6 +6,14 @@ import Screen from 'src/components/Screen';
 
 type Props = RootStackScreenProps<'Dashboard'>;
 
+const mockData: Car[] = [
+  {
+    id: 1,
+    initialPrice: 1000,
+    currentPrice: 800,
+    company: 'Toyota',
+  },
+];
 
 const DashboardScreen = ({navigation}: Props) => {
   navigation.setOptions({

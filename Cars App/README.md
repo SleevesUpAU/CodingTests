@@ -92,3 +92,5 @@ npx react-native init cars --template react-native-template-typescript
 [Sample React Native App](https://github.com/facebook/react-native)
 [Generated with the TypeScript template](https://github.com/react-native-community/react-native-template-typescript)
 [React-Navigation V5 Setup](https://reactnavigation.org/docs/getting-started)
+[How to setup module resolution and path aliases with React Native and TypeScript](https://medium.com/@aleksefo/how-to-setup-module-resolution-and-path-aliases-with-react-native-and-typescript-f4924669780a)
+[React-Navigation : Type checking with TypeScript](https://reactnavigation.org/docs/typescript)

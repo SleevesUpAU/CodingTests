@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   container: {
     margin: constant.space.base,
     padding: constant.space.base,
+    borderColor: color.black,
     borderWidth: constant.border.base,
     borderRadius: constant.radius.base,
   },

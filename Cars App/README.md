@@ -88,6 +88,12 @@ npx react-native init cars --template react-native-template-typescript
 
 Inputs/Forms using labels instead of placeholders doesnt really make sense on mobile devices where space is important
 
+Testing the components would be best done with tools that allow us to mock the interations a user can do. Something like [enzyme](https://enzymejs.github.io/enzyme/) or [https://github.com/callstack/react-native-testing-library](react-native-testing-library) would be a good solution.
+
+Also having a Glossary of all the components that we can easily look at from a high level and interact with would be solved with a tool like [Storybook](https://storybook.js.org).
+
+Using hooks was fun. There are still some efficiencies that can be improved with `useCallback` with all the callbacks we use for our state mutations.
+
 ### References
 
 - [Using TypeScript with React Native](https://reactnative.dev/docs/typescript)
